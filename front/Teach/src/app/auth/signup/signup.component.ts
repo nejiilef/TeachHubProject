@@ -57,6 +57,9 @@ test!:boolean
   }
 
   submitForm() {
+    if (this.registerForm.invalid) {
+      return; // Ne soumettez pas si le formulaire est invalide
+  }
     console.log(this.registerForm!.value);
     this.service.register(this.registerForm!.value).subscribe(
       (response) => {
