@@ -27,6 +27,7 @@ export class UpdateCoursComponent {
       this.service.getCoursById(+parametres['id']).subscribe((c) => {
         if (c) {
           this.cours = c;
+          console.log(c)
           this.initializeForm();
         }
       });
@@ -44,21 +45,23 @@ export class UpdateCoursComponent {
 
   updateCours(): void {
     if (this.UpdateCoursForm.invalid) {
-      return;
+        return;
     }
 
     const values = this.UpdateCoursForm.value;
     const updatedCours: ICoursDTO = {
-      
-      nom: values.nom,
-      coefficient: values.coefficient,
-      credits: values.credits,
-       };
+        nom: values.nom, // Assurez-vous que cela récupère la valeur saisie
+        coefficient: values.coefficient, // Assurez-vous que cela récupère la valeur saisie
+        credits: values.credits, // Ceci fonctionne déjà selon votre code
+    };
 
-    this.service.updateCours(updatedCours, this.cours.id).subscribe(() => {
-      this.router.navigate(['cours']);
+    console.log('Updated Cours DTO:', updatedCours); // Vérifiez les valeurs dans la console
+
+    this.service.updateCours(updatedCours, this.cours.idCours).subscribe(() => {
+        this.router.navigate(['cours']);
     });
-  }
+}
+
 
   onSubmit(): void {
     this.submitted = true;

@@ -22,18 +22,17 @@ onSubmit(f:NgForm){
 this.addCours(f)
 }
 }
+
 addCours=(f:NgForm)=>{
- const newCours={ nom:f.value.nom,coefficient:f.value.coefficient,credits:f.value.credits}
+ const newCours={nom:f.value.nom,coefficient:f.value.coefficient,credits:f.value.credits}
  this.service.addCours(newCours as ICours).subscribe(
   response => {
  
-    console.log('Cours added successfully:', response);
+    // console.log('Cours added successfully:', response);
+    this.router.navigate(["/cours"]);
   },
-  error => {
-   
-    console.error('Error adding Cours:', error);
-  }
+ 
  );
- this.router.navigate(["/Cours"]);
+ 
 }
 }

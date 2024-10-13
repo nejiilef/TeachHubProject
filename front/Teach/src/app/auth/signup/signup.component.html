@@ -36,7 +36,7 @@
                 <h3 *ngIf=test>Espace enseignant</h3>
                 <h3 *ngIf=!test>Espace etudiant</h3>
 				<p>Vous avez déjà un compte ?</p>
-				<button class="ghost" id="signUp">Se connecter</button>
+				<button class="ghost" id="signUp" [routerLink]="['/auth','login']">Se connecter</button>
 			</div>
 		</div>
 	</div>

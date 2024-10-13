@@ -20,9 +20,17 @@
     <form class="login-form" method="post" [formGroup]="UpdateCoursForm" (ngSubmit)="updateCours()">
       <h2><i class="fa-solid fa-pen-to-square"></i> Modifier cours</h2>
       <br>
+      
+        <input type="text" class="form-control" id="prenom" name="prenom" formControlName="prenom" [hidden]="true">
+        
+      
+  
+        <input type="text" class="form-control" id="prenom" name="prenom" formControlName="prenom" [hidden]="true">
+       
+     
       <input type="text" class="form-control" id="nom" name="nom" formControlName="nom" placeholder="Nom">
-      <input type="number" class="form-control" id="coefficient" name="coefficient" formControlName="coefficient" placeholder="Coefficient">
-    
+<input type="number" class="form-control" id="coefficient" name="coefficient" formControlName="coefficient" placeholder="Coefficient">
+
         <input type="number" class="form-control" id="credits" name="credits"   formControlName="credits" placeholder="Credits">
     
       

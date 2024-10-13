@@ -10,13 +10,14 @@
     </head>
     <body>
        
-        <main class="main bd-grid" *ngFor="let c of cours">
+        <main class="main bd-grid" >
+            <div *ngFor="let c of coursList">
             <article class="card">
                 <div class="card__img">
                     <img src="../../../assets/images/cours.png" alt="">
                 </div>
                 <div class="card__name">
-                    <p>Baccouche Mariem</p>
+                    <p>{{c.enseignant.nom}} {{c.enseignant.prenom}}</p>
                 </div>
                 <div class="card__precis">
                     <a href="" class="card__icon" ></a>
@@ -25,116 +26,23 @@
                         <span class="card__preci card__preci--before"><b>{{c.nom}}</b></span>
                         <span class="card__preci card__preci--now">Coefficient : {{c.coefficient}}</span>
                         <span class="card__preci card__preci--now">Credits : {{c.credits}}</span>
-                        <div class="center-container">
-                            <button severity="danger" [style]="btStyle" (click)="deleteCours(c.id)">
+                        
+                        <div class="center-container" *ngIf="test">
+                            <button severity="danger" [style]="btStyle" (click)="deleteCours(c.idCours)">
                                <i class="fa-solid fa-trash" style="margin-right: 5px;"></i>
                             </button>
-                          </div>
-                    </div>
-                    <a href="" class="card__icon"></a>
-                </div>
-            </article>
+                            <button severity="info" [style]="btStyle" [routerLink]="['/cours','update',c.idCours]">
+                                <i class="fa-solid fa-pencil" style="margin-right: 5px;"></i>
 
-        </main>
-        <main class="main bd-grid" >
-            <article class="card">
-                <div class="card__img">
-                    <img src="../../../assets/images/cours.png" alt="">
-                </div>
-                <div class="card__name">
-                    <p>Baccouche Mariem</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before"><b>Java</b></span>
-                        <span class="card__preci card__preci--now">Coefficient : 1</span>
-                        <span class="card__preci card__preci--now">Credits : 20</span>
-                    </div>
-                    <a href="" class="card__icon"></a>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__img">
-                    <img src="../../../assets/images/cours.png" alt="">
-                </div>
-                <div class="card__name">
-                    <p>Baccouche Mariem</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before"><b>Java</b></span>
-                        <span class="card__preci card__preci--now">Coefficient : 1</span>
-                        <span class="card__preci card__preci--now">Credits : 20</span>
-                    </div>
-                    <a href="" class="card__icon"></a>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__img">
-                    <img src="../../../assets/images/cours.png" alt="">
-                </div>
-                <div class="card__name">
-                    <p>Baccouche Mariem</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before"><b>Java</b></span>
-                        <span class="card__preci card__preci--now">Coefficient : 1</span>
-                        <span class="card__preci card__preci--now">Credits : 20</span>
-                    </div>
-                    <a href="" class="card__icon"></a>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__img">
-                    <img src="../../../assets/images/cours.png" alt="">
-                </div>
-                <div class="card__name">
-                    <p>Baccouche Mariem</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before"><b>Java</b></span>
-                        <span class="card__preci card__preci--now">Coefficient : 1</span>
-                        <span class="card__preci card__preci--now">Credits : 20</span>
-                    </div>
-                    <a href="" class="card__icon"></a>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__img">
-                    <img src="../../../assets/images/cours.png" alt="">
-                </div>
-                <div class="card__name">
-                    <p>Baccouche Mariem</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before"><b>Java</b></span>
-                        <span class="card__preci card__preci--now">Coefficient : 1</span>
-                        <span class="card__preci card__preci--now">Credits : 20</span>
-                        <div class="center-container">
-                            <button severity="danger" [style]="btStyle">
-                               <i class="fa-solid fa-trash" style="margin-right: 5px;"></i>
-                            </button>
+                             </button>
                           </div>
                     </div>
                     <a href="" class="card__icon"></a>
-                   
                 </div>
             </article>
-            
-</main>
+        </div>
+        </main>
+       
            
 
         <!-- ICONS -->

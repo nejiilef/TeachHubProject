@@ -28,18 +28,17 @@ public class SecurityConfig {
 	   
 	@Autowired
     public SecurityConfig(JwtRequestFilter jwtRequestFilter ) {
-		
 		this.jwtRequestFilter=jwtRequestFilter;
 	}
 	
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
-        return security.csrf().disable() // Désactive CSRF car nous utilisons des tokens
+        return security.cors().and().csrf().disable() // Désactive CSRF car nous utilisons des tokens
                 .authorizeHttpRequests()
-                .requestMatchers("/signup/**", "/login").permitAll() // Accès libre
+                .requestMatchers("/signup/**", "/login","/**").permitAll() // Accès libre
                 .requestMatchers("/api/etudiant/**").hasRole("ETUDIANT") // Accès uniquement pour les étudiants
                 .requestMatchers("/api/enseignant/**").hasRole("ENSEIGNANT") // Accès uniquement pour les enseignants
-                .anyRequest().authenticated() // Toutes les autres requêtes nécessitent une authentification
+                .anyRequest().permitAll() // Toutes les autres requêtes nécessitent une authentification
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Utilise des sessions stateless

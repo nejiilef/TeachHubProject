@@ -1,5 +1,5 @@
 export interface ICours {
-    id: number;
+    idCours: number;
     nom: string;
     coefficient:number;
     credits:number

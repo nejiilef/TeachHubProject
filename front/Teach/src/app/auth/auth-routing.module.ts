@@ -9,6 +9,9 @@ const routes: Routes = [
   },
   {
     path:'register/:role',component:SignupComponent
+  },
+  {
+    path:'',component:SignupComponent,
   }
 ];
 

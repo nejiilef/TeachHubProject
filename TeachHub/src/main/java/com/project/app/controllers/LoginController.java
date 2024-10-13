@@ -47,12 +47,17 @@ public class LoginController {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "L'utilisateur n'est pas activé");
             return null;
         }
+        String role;
 
         // Charger l'utilisateur via UserServiceImplement
         final UserDetails userDetails = userServiceImplement.loadUserByUsername(loginRequest.getEmail());
         final String jwt = jwtUtil.generateToken(userDetails.getUsername());
-
-        return new LoginResponse(jwt);
+        if(userDetails.getAuthorities().toString().equals("[ROLE_ETUDIANT]")){
+       	 role="etudiant";
+       }else {
+       	role="ensiegnant";
+       }
+        return new LoginResponse(jwt,role);
     }
 
 }
