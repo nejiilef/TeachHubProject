@@ -29,8 +29,10 @@ export class LoginComponent {
         console.log(response);
         if (response.jwt != null) {
           localStorage.setItem("role",response.role);
+          
           localStorage.setItem("username",this.loginForm.value.email);
           console.log(response.role);
+          localStorage.setItem("id",response.id)
           alert("Hello, Your token is " + response.jwt);
           const jwtToken = response.jwt;
           localStorage.setItem('jwt', jwtToken);

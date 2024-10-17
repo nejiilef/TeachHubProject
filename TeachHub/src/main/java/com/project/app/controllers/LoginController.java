@@ -57,7 +57,7 @@ public class LoginController {
        }else {
        	role="ensiegnant";
        }
-        return new LoginResponse(jwt,role);
+        return new LoginResponse(jwt,role,this.userServiceImplement.getIdUser(loginRequest.getEmail()));
     }
 
 }

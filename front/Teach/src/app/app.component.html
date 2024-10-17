@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
 <nav>
-    <div class="navbar" *ngIf="isMenuVisible">
-      <div class="container nav-container">
-        <!-- Bouton déplacé à droite -->
-        <div class="logo">
-          <h1>TeachHub</h1>
-        </div>
-        <div class="button-container" *ngIf="test">
-          <button class="nav-link" [routerLink]="['/cours','add']">
-            <b><i class="fa-solid fa-plus" style="color:#815f33; width:50px;"></i></b>
-          </button>
-        </div>
+  <div class="navbar" *ngIf="isMenuVisible">
+    <div class="container nav-container">
+      <div class="logo">
+        <h1>TeachHub</h1>
+      </div>
+      <div class="button-container" *ngIf="dev">
+        <button class="nav-link" [routerLink]="['/devoirs', 'add']">
+<i class="fa-solid fa-plus"></i><b>Devoir</b>
+</button>
+      </div>
+      <div class="button-container" *ngIf="test">
+        <button class="nav-link" [routerLink]="['/cours', 'add']">
+          <i class="fa-solid fa-plus"></i>
+          <b>Cours</b>
+        </button>
       </div>
     </div>
-  </nav>
-  
-  <router-outlet></router-outlet>
-  
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

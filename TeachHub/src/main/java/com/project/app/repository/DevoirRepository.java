@@ -5,11 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.project.app.models.Cour;
-
-
+import com.project.app.models.Devoir;
 
 @Repository
-public interface CourRepository extends JpaRepository <Cour,Integer>{
-	 List<Cour> findByEnseignant_Id(Long enseignantId);
+public interface DevoirRepository extends JpaRepository <Devoir, Long>{
+	 
 }

@@ -102,4 +102,31 @@ body {
   .nav-link i {
     font-size: 24px;
   }
-  
+  .button-container {
+    margin-left: auto; /* Aligner les boutons à droite */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem; /* Espacement intérieur */
+    background-color: #815f33; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 0.5rem; /* Coins arrondis */
+    font-size: 1rem; /* Taille de la police */
+    font-weight: bold; /* Épaisseur du texte */
+    cursor: pointer; /* Curseur en main au survol */
+    transition: background-color 0.3s, transform 0.2s; /* Animation pour l'effet au survol */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée */
+}
+
+.nav-link:hover {
+    background-color: #6f4c29; /* Couleur de fond au survol */
+    transform: translateY(-2px); /* Effet de levée au survol */
+}
+
+.nav-link i {
+    margin-right: 0.5rem; /* Espacement à droite de l'icône */
+}

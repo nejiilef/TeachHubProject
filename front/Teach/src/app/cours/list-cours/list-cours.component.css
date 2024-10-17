@@ -175,4 +175,26 @@ article:nth-child(n){
     }
     
 }                                         
-            
+.primary-cta {
+    font-size: 16px; /* Taille du texte */
+    background-color: #c8b79e; /* Couleur de fond beige foncé */
+    color: #ffffff; /* Couleur du texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 0.5em; /* Bords arrondis */
+    padding: 0.5em 1em; /* Espacement intérieur */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s, transform 0.2s; /* Transition pour hover */
+    display: flex; /* Pour centrer l'icône et le texte */
+    align-items: center; /* Centrer verticalement */
+}
+
+.primary-cta:hover {
+    background-color: #a89579; /* Couleur de fond plus foncée au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.primary-cta:focus {
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 0 2px rgba(200, 183, 158, 0.5); /* Ombre au focus */
+}
+          

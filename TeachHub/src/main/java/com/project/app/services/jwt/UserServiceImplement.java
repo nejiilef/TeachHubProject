@@ -42,6 +42,7 @@ public class UserServiceImplement implements UserDetailsService {
             List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ETUDIANT"));
             return new User(etudiant.getEmail(), etudiant.getMotDePasse(), authorities);
         }
+        
 
         Optional<Enseignant> enseignantOpt = enseignantRepository.findByEmail(email);
         if (enseignantOpt.isPresent()) {
@@ -53,5 +54,18 @@ public class UserServiceImplement implements UserDetailsService {
         throw new UsernameNotFoundException("Utilisateur non trouvé avec l'email: " + email);
     }
 
+    public Long getIdUser(String email) {
+    	Optional<Etudiant> etudiantOpt = etudiantRepository.findByEmail(email);
+    	Long id=null;
+        if (etudiantOpt.isPresent()) {
+        	id=etudiantOpt.get().getId();
+        }else {
+        Optional<Enseignant> enseignantOpt = enseignantRepository.findByEmail(email);
+        if (enseignantOpt.isPresent()) {
+        	id=enseignantOpt.get().getId();
+        }}
+        return id;
+        }
+    }
 
-}
+

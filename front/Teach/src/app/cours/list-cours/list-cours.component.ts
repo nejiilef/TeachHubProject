@@ -20,7 +20,7 @@ export class ListCoursComponent {
     let currentroute = this.router.url;
     let role=localStorage.getItem('role');
     let jwt=localStorage.getItem('jwt');
-    if(role='etudiant'){
+    if(role=='etudiant'){
       this.test=false;
     }
     else{

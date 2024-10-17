@@ -17,7 +17,7 @@ export class CoursService {
   constructor(private http:HttpClient,private service:AuthService) { }
 
   getAllCours():Observable<ICours[]>{
-    return this.http.get<ICours[]>(BASE_URL+"cours",{headers:this.headers!});
+    return this.http.get<ICours[]>(BASE_URL+"cours/"+localStorage.getItem("id"),{headers:this.headers!});
   }
   addCours(cours:ICours):Observable<ICours> {
     return this.http.post<ICours>(BASE_URL + "addcour/"+localStorage.getItem("username"),cours,{headers:this.headers!});

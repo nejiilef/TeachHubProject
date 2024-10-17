@@ -33,9 +33,9 @@ public class CourController {
 		return courserv.addCour(courDTO,usernameEns);
 	}
 	
-	@GetMapping(value = "/cours")
-    public List<Cour> getAllCours() {
-        return courserv.getAllCours(); 
+	@GetMapping(value = "/cours/{id}")
+    public List<Cour> getAllCours(@PathVariable(value="id") Long id) {
+        return courserv.getAllCours(id); 
     }	
 	@PutMapping("/updatecours/{id}")
 	public ResponseEntity<Cour> updateCour(@PathVariable(value="id") int id,@RequestBody CourDTO courDTO){
@@ -44,7 +44,7 @@ public class CourController {
 		
 	}
 	@DeleteMapping("/deletecours/{id}")
-	 public ResponseEntity<String> deleteTerrain(@PathVariable(value="id") int id){
+	 public ResponseEntity<String> deleteCour(@PathVariable(value="id") int id){
 		 this.courserv.deleteCour(id);
 		 return ResponseEntity.status(HttpStatus.OK).body("Cours deleted successfully");
 	 }

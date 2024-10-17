@@ -11,7 +11,7 @@ import com.project.app.models.Enseignant;
 
 public interface IcourService {
 	public Cour addCour(CourDTO Cour,String usernameEns);
-	public List<Cour> getAllCours(); 
+	public List<Cour> getAllCours(Long id); 
 	void deleteCour(int courId);
 	Cour updateCour(int courId,CourDTO courDTO);
 	 

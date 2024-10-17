@@ -12,6 +12,7 @@ import { ICours } from '../model/icours';
 export class AddCoursComponent {
 constructor(private service:CoursService,private router:Router){}
 subbmited=false;
+
 onSubmit(f:NgForm){
   this.subbmited=true;
   

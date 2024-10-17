@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-       
         <main class="main bd-grid" >
             <div *ngFor="let c of coursList">
-            <article class="card">
+            <article class="card" [routerLink]="['/devoirs','list',c.idCours]" style="cursor: pointer;">
                 <div class="card__img">
                     <img src="../../../assets/images/cours.png" alt="">
                 </div>
@@ -28,13 +27,12 @@
                         <span class="card__preci card__preci--now">Credits : {{c.credits}}</span>
                         
                         <div class="center-container" *ngIf="test">
-                            <button severity="danger" [style]="btStyle" (click)="deleteCours(c.idCours)">
-                               <i class="fa-solid fa-trash" style="margin-right: 5px;"></i>
-                            </button>
-                            <button severity="info" [style]="btStyle" [routerLink]="['/cours','update',c.idCours]">
+                           
+                            <button class="primary-cta" [routerLink]="['/cours','update',c.idCours]">
                                 <i class="fa-solid fa-pencil" style="margin-right: 5px;"></i>
-
-                             </button>
+                                Update
+                            </button>
+                            
                           </div>
                     </div>
                     <a href="" class="card__icon"></a>

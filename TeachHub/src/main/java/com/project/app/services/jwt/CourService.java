@@ -46,8 +46,8 @@ public class CourService implements IcourService {
 	}
 
 	@Override
-	public List<Cour> getAllCours() {
-		List<Cour> c= courrep.findAll();
+	public List<Cour> getAllCours(Long id) {
+		List<Cour> c= courrep.findByEnseignant_Id(id);
 		
 			return c;	
 				
