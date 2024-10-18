@@ -14,6 +14,7 @@ export class UpdateDevoirComponent implements OnInit {
     UpdateDevoirForm!: FormGroup;
     devoir!: IDevoir;
 
+    idCours=localStorage.getItem("idCours")
     constructor(
         private formBuilder: FormBuilder,
         private activatedRoute: ActivatedRoute,
@@ -61,7 +62,7 @@ export class UpdateDevoirComponent implements OnInit {
         };
 
         this.service.updateDevoir(updatedDevoir, this.devoir.idDevoir).subscribe(() => {
-            this.router.navigate(['devoirs']);
+            this.router.navigate(['/devoirs/list/'+this.idCours]);
         });
     }
 }

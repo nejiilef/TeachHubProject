@@ -11,7 +11,7 @@ import { IDevoirDTO } from '../model/idevoir-dto';
   styleUrls: ['./add-devoir.component.css']
 })
 export class AddDevoirComponent {
-
+idCours=localStorage.getItem("idCours")
   constructor(private service:DevoirService,private router:Router){}
   subbmited=false;
   pdfFile?: File; 
@@ -49,8 +49,8 @@ onFileChange(event: Event) {
     }
 
     // Appel du service pour ajouter le devoir avec le fichier
-    this.service.addDevoir(formData, 5).subscribe(response => {
-      this.router.navigate(['/devoirs']);
+    this.service.addDevoir(formData, +this.idCours!).subscribe(response => {
+      this.router.navigate(['/devoirs/list/'+this.idCours]);
     });
   }
 }

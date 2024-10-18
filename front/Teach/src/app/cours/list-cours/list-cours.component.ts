@@ -45,4 +45,7 @@ export class ListCoursComponent {
         this.ngOnInit();
       })
     }
+    getIdCours(id: number){
+localStorage.setItem("idCours",id.toString());
+    }
 }

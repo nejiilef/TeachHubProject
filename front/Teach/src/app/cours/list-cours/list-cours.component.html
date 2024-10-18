@@ -11,7 +11,7 @@
     <body>
         <main class="main bd-grid" >
             <div *ngFor="let c of coursList">
-            <article class="card" [routerLink]="['/devoirs','list',c.idCours]" style="cursor: pointer;">
+            <article class="card" [routerLink]="['/devoirs','list',c.idCours]" style="cursor: pointer;" (click)="getIdCours(c.idCours)">
                 <div class="card__img">
                     <img src="../../../assets/images/cours.png" alt="">
                 </div>
